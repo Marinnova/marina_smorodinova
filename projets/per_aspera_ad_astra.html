@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>per_aspera_ad_astra_marina_smorodinova</title>
+  <link rel="stylesheet" href="projects.css" />
+</head>
+
+<body class="projects-body">
+
+  <!-- HEADER -->
+  <div class="header-container">
+    <a href="projects_all.html" class="back-button" aria-label="Retour">
+      <img src="../icons/door2.svg" alt="Retour" class="icon-door">
+    </a>
+
+    <header class="header">
+      <div class="left-block">
+        <a href="../bio.html" class="logo">marina smorodinova</a>
+      </div>
+      <div class="right-block">
+        <a href="projects_all.html" class="menu-link">studio</a>
+      </div>
+    </header>
+  </div>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="projects-page">
+    <!-- TEXTE À GAUCHE -->
+    <div class="projects-left">
+      <div class="projects-text">
+        <p><strong>Per aspera ad astra</strong></p>
+        <p>2023, installation vidéo en binome avec Eloka Som</p>
+        <p>Aciers plats perforés ; toile tissée ; système optique conçu
+pour l’installation ; vidéoprojecteur.</p>
+        <p>A travers l’astronomie, dans une forme à la lisière
+du poétique et du documentaire, ce projet tente de
+mettre au jour notre relation ambigüe au cosmos, à la
+fois chargé d’un imaginaire dense, sensible et intime, et
+pris à l’échelle mondiale dans des jeux d’influence et de
+pouvoir.
+L’installation reprend le dispositif de planétarium.
+Les spectateurs sont allongés sous cette “voûte céleste”,
+sur laquelle est projetée de la matière visuelle. Ce projet
+regroupe trois themes : l’entrainement des corps des
+cosmonautes, l’exploration et l’exploitation du cosmos en
+cours, la recherche des météorites sur la terre.</p>
+        <p>___</p>
+
+        <p><strong>Journal du projet :</strong></p>
+        <p>Cette installation existe sous la forme d’un dôme démontable, qui enveloppe les spectateurs. </p>
+        <p>Étant donné la quantité de matière et d’informations que j’ai dû assimiler en travaillant sur cette installation, le projet est toujours en cours, sous une forme photographique et sonore qui s’ajoute progressivement à l’installation du dôme.
+La performance, elle aussi, est en cours de préparation.</p>
+      </div>
+    </div>
+
+    <!-- MÉDIAS À DROITE -->
+    <div class="project-media">
+      <!-- Vidéo -->
+      <div class="video-container">
+        <iframe 
+          src="https://player.vimeo.com/video/774455780"
+          frameborder="0"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+          title="Vidéo du projet">
+        </iframe>
+      </div>
+
+      <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/per_aspera_ad_astra_Marina_Smorodinova.jpg" alt="Image du projet 1" data-src="../images/per_aspera_ad_astra_Marina_Smorodinova.jpg">
+        <img src="../images/per_aspera_ad_astra_Marina_Smorodinova_4.jpg" alt="Image du projet 2" data-src="../images/per_aspera_ad_astra_Marina_Smorodinova_4.jpg">
+        <img src="../images/marina_smorodinova_gravite3.jpg" alt="Image du projet 3" data-src="../images/marina_smorodinova_gravite3.jpg">
+      </div>
+
+    <!-- Fenêtre modale (hidden par défaut) -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="Agrandissement">
+</div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>

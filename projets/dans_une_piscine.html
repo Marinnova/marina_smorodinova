@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>dans_une_piscine_marina_smorodinova</title>
+  <link rel="stylesheet" href="projects.css" />
+</head>
+
+<body class="projects-body">
+
+  <!-- HEADER -->
+  <div class="header-container">
+    <a href="projects_all.html" class="back-button" aria-label="Retour">
+      <img src="../icons/door2.svg" alt="Retour" class="icon-door">
+    </a>
+
+    <header class="header">
+      <div class="left-block">
+        <a href="../index1.html" class="logo">marina smorodinova</a>
+      </div>
+      <div class="right-block">
+        <a href="projects_all.html" class="menu-link">studio</a>
+      </div>
+    </header>
+  </div>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="projects-page">
+    <!-- TEXTE À GAUCHE -->
+    <div class="projects-left">
+      <div class="projects-text">
+        <p><strong>Dans une piscine</strong></p>
+        <p>Installation vidéo, 2019</p>
+        <p>En 2018 j’ai réalisé le court-métrage Piscine à la piscine olympique de Forbach.
+La préparation du tournage, ainsi que le tournage lui-même ont provoqué
+multiples rencontres et discussions avec les habitants du territoire. Si le flm
+ne raconte pas spécifquement la piscine de Forbach, l’installation sur trois
+écrans crée un portrait de cet espace en particulier. Un lieu architectural.
+Un lieu fonctionnel et technique. Un lieu d’échange social. L’espace simple
+devient alors complexe par la multitude des lectures possibles</p>
+      
+        <p>___</p>
+
+        <p><strong>Journal du bord :</strong></p>
+        <p>De belles rencontres cinématographiques et documentaires ont eu lieu pendant le tournage d’un autre film.
+Mais parfois, le film impose autre chose que ce qu’on avait prévu au départ.
+Je me suis ainsi retrouvée avec de nombreux entretiens et des séquences filmées à la piscine.
+C’est comme ça que cette installation est née.</p>
+       
+      </div>
+    </div>
+
+    <!-- MÉDIAS À DROITE -->
+    <div class="project-media">
+      <!-- Vidéo -->
+      <div class="video-container">
+        <iframe 
+          src="https://player.vimeo.com/video/1136517464"
+          frameborder="0"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+          title="Vidéo du projet">
+        </iframe>
+      </div>
+
+      <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/dans_une_piscine_4_piscine_marina_smorodinova.jpg" alt="Image du projet 1" data-src="../images/dans_une_piscine_4_piscine_marina_smorodinova.jpg">
+        <img src="../images/dans_une_piscine_3_marina_smorodinova.jpg" alt="Image du projet 2" data-src="../images/dans_une_piscine_3_marina_smorodinova.jpg">
+        <img src="../images/dans_une_piscine.jpg" alt="Image du projet 3" data-src="../images/dans_une_piscine.jpg">
+      </div>
+
+    <!-- Fenêtre modale (hidden par défaut) -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="Agrandissement">
+</div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>

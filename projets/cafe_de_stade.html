@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>cafe_de_stade_marina_smorodinova</title>
+  <link rel="stylesheet" href="projects.css" />
+</head>
+
+<body class="projects-body">
+
+  <!-- HEADER -->
+  <div class="header-container">
+    <a href="projects_all.html" class="back-button" aria-label="Retour">
+      <img src="../icons/door2.svg" alt="Retour" class="icon-door">
+    </a>
+
+    <header class="header">
+      <div class="left-block">
+        <a href="../bio.html" class="logo">marina smorodinova</a>
+      </div>
+      <div class="right-block">
+        <a href="projects_all.html" class="menu-link">studio</a>
+      </div>
+    </header>
+  </div>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="projects-page">
+    <!-- TEXTE À GAUCHE -->
+    <div class="projects-left">
+      <div class="projects-text">
+        <p><strong>Café du stade</strong></p>
+        <p>vidéo, 14 minutes, 2024 </p>
+        <p>A la base du projet, il y avait une jeune équipe
+féminine prête à partager son image et son histoire. Puis
+celles et ceux qui ont connu le passé son venu l’enrichir.
+Ce film traverse l’histoire du territoire du bassin minier à
+travers les récits des générations.</p>
+        
+        <p>___</p>
+
+        <p><strong>Journal du projet :</strong></p>
+        <p>Ce que je trouve difficile avec la vidéo, c’est son aspect figé.</p>
+        <p>Une fois le montage, le mixage et l’étalonnage achevés, l’œuvre est figée — c’est cette version-là qu’on présente.</p>
+        <p>Mais il y a des vidéos auxquelles je sais que je reviendrai, que je retravaillerai.
+Quand je trouverai le temps ou les moyens économiques de faire autrement certaines choses.
+En attendant, je me dis qu’elles existent dans leur meilleure version possible au moment de leur création.</p>
+      </div>
+    </div>
+
+    <!-- MÉDIAS À DROITE -->
+    <div class="project-media">
+      <!-- Vidéo -->
+      <div class="video-container">
+        <iframe 
+          src="https://player.vimeo.com/video/1136481819"
+          frameborder="0"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+          title="Vidéo du projet">
+        </iframe>
+      </div>
+
+      <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/cafe_du_stade_3_marina_smorodinova.jpg" alt="Image du projet 1" data-src="../images/cafe_du_stade_3_marina_smorodinova.jpg">
+        <img src="../images/cafe_du_stade_marina_smorodinova.jpg" alt="Image du projet 2" data-src="../images/cafe_du_stade_marina_smorodinova.jpg">
+        <img src="../images/cafe_du_stade_marina_smorodinova2.jpg" alt="Image du projet 3" data-src="../images/cafe_du_stade_marina_smorodinova2.jpg">
+      </div>
+
+    <!-- Fenêtre modale (hidden par défaut) -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="Agrandissement">
+</div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>

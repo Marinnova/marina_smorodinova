@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>a_la_lumiere_de_ce_qui_precede_ marina_smorodinova</title>
+  <link rel="stylesheet" href="projects.css" />
+</head>
+
+<body class="projects-body">
+
+  <!-- HEADER -->
+  <div class="header-container">
+    <a href="projects_all.html" class="back-button" aria-label="Retour">
+      <img src="../icons/door2.svg" alt="Retour" class="icon-door">
+    </a>
+
+    <header class="header">
+      <div class="left-block">
+        <a href="../projets/bio.html" class="logo">marina smorodinova</a>
+      </div>
+      <div class="right-block">
+        <a href="projects_all.html" class="menu-link">studio</a>
+      </div>
+    </header>
+  </div>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="projects-page">
+    <!-- TEXTE À GAUCHE -->
+    <div class="projects-left">
+      <div class="projects-text">
+        <p><strong>A la lumière de ce qui précède</strong></p>
+        <p>vidéo, 2014, durée : 10min </p>
+        <p>Cette vidéo montre la manière dont une coupure d’électricité est
+vécue dans trois espaces différents par trois personnes: une petite fille,
+une jeune adulte et une personne âgée. Basé sur des souvenirs et des
+observations, le film se déroule dans une temporalité indéfinie : tout
+pourrait se passer au même moment ou bien à des dizaines d’années
+d’intervalle. La vidéo est accompagnée d’un texte écrit sur le mur au stylo à
+bille. Ce dernier reprend et analyse la phrase d’introduction suivante, utilisée
+en français, en russe et en anglais : “À la lumière de ce qui précède”.</p>
+        
+        <p>___</p>
+
+        <p><strong>Journal du bord :</strong></p>
+        <p>Mon premier film en équipe. Ma grand-mère s’est endormie pendant le tournage et je l’ai filmée.</p>
+       
+      </div>
+    </div>
+
+    <!-- MÉDIAS À DROITE -->
+    <div class="project-media">
+      <!-- Vidéo -->
+      <div class="video-container">
+        <iframe 
+          src="https://player.vimeo.com/video/1138860691"
+          frameborder="0"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+          title="Vidéo du projet">
+        </iframe>
+      </div>
+
+      <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/in_light_of_the_foregoing_party.jpg" alt="Image du projet 1" data-src="../images/in_light_of_the_foregoing_party.jpg">
+        <img src="../images/a_la_lumiere_de_ce_qui_precede_1.jpg" alt="Image du projet 2" data-src="../images/a_la_lumiere_de_ce_qui_precede_1.jpg">
+        <img src="../images/a_la_lumiere_du_jour_presentation_projection.jpg" alt="Image du projet 3" data-src="../images/a_la_lumiere_du_jour_presentation_projection.jpg">
+      </div>
+
+    <!-- Fenêtre modale (hidden par défaut) -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="Agrandissement">
+</div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>piscine_marina_smorodinova</title>
+  <link rel="stylesheet" href="projects.css" />
+</head>
+
+<body class="projects-body">
+
+  <!-- HEADER -->
+  <div class="header-container">
+    <a href="projects_all.html" class="back-button" aria-label="Retour">
+      <img src="../icons/door2.svg" alt="Retour" class="icon-door">
+    </a>
+
+    <header class="header">
+      <div class="left-block">
+        <a href="../index1.html" class="logo">marina smorodinova</a>
+      </div>
+      <div class="right-block">
+        <a href="projects_all.html" class="menu-link">studio</a>
+      </div>
+    </header>
+  </div>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="projects-page">
+    <!-- TEXTE À GAUCHE -->
+    <div class="projects-left">
+      <div class="projects-text">
+        <p><strong>Piscine</strong></p>
+        <p>Court-métrage, 2018, production : Le Fresnoy, durée : 17min </p>
+        <p>Dans une petite ville transfrontalière, ancien site minier de
+l’Est de la France, se trouve une piscine olympique. L’architecture et
+la situation de la piscine par rapport à la ville sont marquantes, mais
+le lieu reste néanmoins anodin. Il y a peu de gens de passage, c’est un
+endroit où vont principalement les nageurs réguliers, les habitués. Que
+cherchent-ils quand ils se rendent à la piscine ?</p>
+        <p>___</p>
+
+        <p><strong>Journal du bord :</strong></p>
+        <p>Ça devait être une fiction, avec un personnage principal qui se rend à la piscine.
+Mais au moment du montage, j’ai réalisé que je cherchais plutôt une sensation qu’un récit.</p>
+        <p>Le personnage principal a été coupé (je suis désolée pour lui).
+La majeure partie des dialogues est tombée à l’eau.
+Et en même temps, quelle liberté de pouvoir “couper” tout le scénario au montage,
+malgré les engagements et les financements.
+C’est rare et précieux.</p>
+      </div>
+    </div>
+
+    <!-- MÉDIAS À DROITE -->
+    <div class="project-media">
+      <!-- Vidéo -->
+      <div class="video-container">
+        <iframe 
+          src="https://player.vimeo.com/video/273320463"
+          frameborder="0"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+          title="Vidéo du projet">
+        </iframe>
+      </div>
+
+      <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/piscine_marina_smorodinova4.jpg" alt="Image du projet 1" data-src="../images/piscine_marina_smorodinova4.jpg">
+        <img src="../images/piscine_marina_smorodinova5.jpg" alt="Image du projet 2" data-src="../images/piscine_marina_smorodinova5.jpg">
+        <img src="../images/piscine_marina_smorodinova6.jpg" alt="Image du projet 3" data-src="../images/piscine_marina_smorodinova6.jpg">
+      </div>
+
+    <!-- Fenêtre modale (hidden par défaut) -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="Agrandissement">
+</div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>

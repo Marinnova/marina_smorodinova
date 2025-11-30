@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <title>listen_to_the_world_marina_smorodinova</title>
+ <link rel="stylesheet" href="projects.css" />
+</head>
+<body class="projects-body">
+
+
+<!-- Conteneur global du header -->
+<div class="header-container">
+ <!-- Bouton de retour -->
+ <a href="projects_all.html" class="back-button" aria-label="Retour">
+   <img src="../icons/door2.svg" alt="Retour" class="icon-door">
+ </a>
+
+
+ <!-- Header principal -->
+ <header class="header">
+   <div class="left-block">
+     <a href="bio.html" class="logo">marina smorodinova</a>
+   </div>
+   <div class="right-block">
+     <a href="projects_all.html" class="menu-link">studio</a>
+   </div>
+ </header>
+</div>
+
+
+
+
+<main class="projects-page">
+ <div class="projects-left">
+   <div class="projects-text">
+     <p><strong>Listen to the world</strong></p>
+       <p>installation photographique</p>
+       <p>2012-2018</p>
+       <p>Pourquoi habite-t-on là où on habite ? Quels sont les critères de
+nos choix ? Les études, le travail, l’amour ? Chaque fois dans une ville
+différente, je rencontre une personne et lui demande, au cours d’une
+promenade de quelques heures, de prendre du temps pour échanger autour
+de son rapport au lieu qu’elle habite. Cette ville dans laquelle chacun a
+ses habitudes, mais qu’une promenade inhabituelle permet d’explorer
+autrement. À un certain moment, je lui propose simplement de fermer les
+yeux et d’écouter la ville. Je réalise alors des clichés.</p>
+    
+        <p>___</p>
+       <p><strong>Journal du bord :</strong></p>
+       <p>uand j’ai commencé ce projet, je venais de m’installer en France.
+Je voyageais beaucoup, j’étais une jeune adulte, comme mes modèles, et je ressentais ce monde sans frontière en me déplaçant dans l’espace Schengen, d’une ville à l’autre.
+Je me posais sincèrement cette question : comment choisir son lieu d’habitation ?
+C’était à l’image d’une Europe ouverte.
+Parfois, j’ai encore envie de reprendre ce projet aujourd’hui,
+et de rencontrer les jeunes adultes d’aujourd’hui pour me faire une idée de leur rapport au lieu d’habitation et de leur vision du monde.
+Tellement de changements ont eu lieu ces dernières années.</p>
+   </div>
+ </div>
+
+
+<!-- MÉDIAS À DROITE -->
+    <div class="project-media">
+    
+      <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/listen_to_the_world_cecilia_marina_smorodinova.jpg" alt="Image du projet 2" data-src="../images/listen_to_the_world_cecilia_marina_smorodinova.jpg">
+        <img src="../images/listen_to_the_world_marc_marina_smorodinova.jpg" alt="Image du projet 3" data-src="../images/listen_to_the_world_marc_marina_smorodinova.jpg">
+        <img src="../images/listen_to_the_world_nick_marina_smorodinova.jpg" alt="Image du projet 4" data-src="../images/listen_to_the_world_nick_marina_smorodinova.jpg">
+
+      </div>
+
+       <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/listen_to_the_world_victoria_marina_smorodinova.jpg" alt="Image du projet 2" data-src="../images/listen_to_the_world_victoria_marina_smorodinova.jpg">
+        <img src="../images/listen_to_the_world_marina_smorodinova_vue_expo.jpg" alt="Image du projet 3" data-src="../images/listen_to_the_world_marina_smorodinova_vue_expo.jpg">
+
+      </div>
+
+    <!-- Fenêtre modale (hidden par défaut) -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="Agrandissement">
+</div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>

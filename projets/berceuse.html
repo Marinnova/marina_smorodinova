@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>berceuse-marina_smorodinova</title>
+  <link rel="stylesheet" href="projects.css" />
+</head>
+
+<body class="projects-body">
+
+  <!-- HEADER -->
+  <div class="header-container">
+    <a href="projects_all.html" class="back-button" aria-label="Retour">
+      <img src="../icons/door2.svg" alt="Retour" class="icon-door">
+    </a>
+
+    <header class="header">
+      <div class="left-block">
+        <a href="../index.html" class="logo">marina smorodinova</a>
+      </div>
+      <div class="right-block">
+        <a href="projects_all.html" class="menu-link">studio</a>
+      </div>
+    </header>
+  </div>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="projects-page">
+    <!-- TEXTE À GAUCHE -->
+    <div class="projects-left">
+      <div class="projects-text">
+        <p><strong>Berceuse</strong></p>
+        <p>2025, performance, en cours </p>
+        <p>Chanter à un enfant est une forme de connexion unique.
+Parfois, les berceuses sont chantées dans la tendresse et le repos ; parfois, elles émergent à bout de forces, porteuses des inquiétudes liées à la vie et à la maternité.
+La performance explore la question de la maternité et ses représentations.
+Elle mêle chant, texte, mouvement et projections vidéo. </p>
+        <p></p>
+        <p>___</p>
+        <p><strong>Journal du bord :</strong></p>
+        <p>Quel est le lien entre le patriarcat et la maternité ? </p>
+        <p>Et l’avenir ? On projette tout ce qu’on imagine. On imagine beaucoup de choses.</p>
+        <p>Une nouvelle lecture en lien avec la performance :
+        Trehub, Sandra E.; Hannon, Erin E. (2006). "Infant music perception: Domain-general or domain-specific mechanisms?"</p>
+      </div>
+    </div>
+
+    <!-- MÉDIAS À DROITE -->
+    <div class="project-media">
+      <!-- Vidéo -->
+      <div class="video-container">
+        <iframe 
+          src="https://player.vimeo.com/video/1136496519"
+          frameborder="0"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+          title="Vidéo du projet">
+        </iframe>
+      </div>
+
+      <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/berceuse_22_marina_smorodinova.jpg" alt="Image du projet 1" data-src="../images/berceuse_22_marina_smorodinova.jpg">
+        <img src="../images/berceuse_3_marina_smorodinova.jpg" alt="Image du projet 2" data-src="../images/berceuse3_marina_smorodinova.jpg">
+        <img src="../images/berceuse_marina_smorodinova.jpg" alt="Image du projet 3" data-src="../images/berceuse_marina_smorodinova.jpg">
+      </div>
+
+    <!-- Fenêtre modale (hidden par défaut) -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="Agrandissement">
+</div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>

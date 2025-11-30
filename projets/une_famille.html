@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <title>une_famille_marina_smorodinova</title>
+ <link rel="stylesheet" href="projects.css" />
+</head>
+<body class="projects-body">
+
+
+<!-- Conteneur global du header -->
+<div class="header-container">
+ <!-- Bouton de retour -->
+ <a href="projects_all.html" class="back-button" aria-label="Retour">
+   <img src="../icons/door2.svg" alt="Retour" class="icon-door">
+ </a>
+
+
+ <!-- Header principal -->
+ <header class="header">
+   <div class="left-block">
+     <a href="bio.html" class="logo">marina smorodinova</a>
+   </div>
+   <div class="right-block">
+     <a href="projects_all.html" class="menu-link">studio</a>
+   </div>
+ </header>
+</div>
+
+
+
+
+<main class="projects-page">
+ <div class="projects-left">
+   <div class="projects-text">
+     <p><strong>Une famille</strong></p>
+       <p>Des photographies imprimées et des planches de bois</p>
+       <p>2025, en cours</p>
+       <p>Ce sont des photos d’inconnus, mêlées à celles prises par ma famille.
+La seule contrainte est qu’il s’agit d’images réalisées et conservées sur pellicule, 
+tirées à partir de négatifs, et qui conservent souvent les particularités et imperfections 
+propres à la matière photographique — celles du développement ou du tirage.
+Parfois, elles portent aussi la trace d’un geste physique sur l’image imprimée, 
+comme ici : “couper” une personne indésirable de la photo.</p>
+        <p>___</p>
+       <p><strong>Journal du projet :</strong></p>
+       <p>Depuis que je me suis retrouvée à faire des travaux chez des ami·e·s, j’ai été fascinée par le bois, par ses ornements.</p>
+       <p>Quand j’ai retrouvé un carton contenant ces photos des familles, cela m’a semblé une évidence : ces deux matériaux devaient cohabiter.</p>
+        <p>Je me suis mise à chercher des images de familles, des photos anonymes.</p>
+        <p>Je suis toujours à la recherche de ce type d'image, si jamais vous en trouvez, n'hésitez pas à me contacter.</p>
+   </div>
+ </div>
+
+
+<!-- MÉDIAS À DROITE -->
+    <div class="project-media">
+    
+      <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/une_famille_marina_smorodinova.jpg" alt="Image du projet 1" data-src="../images/une_famille_marina_smorodinova.jpg">
+        <img src="../images/une_famille_marina_smorodinova_2.jpg" alt="Image du projet 2" data-src="../images/une_famille_marina_smorodinova_2.jpg">
+
+      </div>
+
+    <!-- Fenêtre modale (hidden par défaut) -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="Agrandissement">
+</div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <title>dialogue_marina_smorodinova</title>
+ <link rel="stylesheet" href="projects.css" />
+</head>
+<body class="projects-body">
+
+
+<!-- Conteneur global du header -->
+<div class="header-container">
+ <!-- Bouton de retour -->
+ <a href="projects_all.html" class="back-button" aria-label="Retour">
+   <img src="../icons/door2.svg" alt="Retour" class="icon-door">
+ </a>
+
+
+ <!-- Header principal -->
+ <header class="header">
+   <div class="left-block">
+     <a href="bio.html" class="logo">marina smorodinova</a>
+   </div>
+   <div class="right-block">
+     <a href="projects_all.html" class="menu-link">studio</a>
+   </div>
+ </header>
+</div>
+
+
+
+
+<main class="projects-page">
+ <div class="projects-left">
+   <div class="projects-text">
+     <p><strong>Dialogue</strong></p>
+       <p>installation vidéo</p>
+       <p>2013</p>
+       <p>En russe il y a une phrase : Quand tu es gai tout le monde est ton ami, quand tu es triste
+personne n’est ton ami.
+Ce diptyque vidéo traite de ce sujet.</p>
+    
+        <p>___</p>
+       <p><strong>Journal du bord :</strong></p>
+       <p>Je me demande parfois comment cette pièce pourrait être présentée dans 10 ou 20 ans.
+Y aura-t-il toujours des petits écrans comme ceux-ci ?
+Avec la même réflexion sur l’écran ?
+       </p>
+   </div>
+ </div>
+
+
+<!-- MÉDIAS À DROITE -->
+    <div class="project-media">
+      <!-- Vidéo -->
+      <div class="video-container">
+        <iframe 
+          src="https://player.vimeo.com/video/84570372"
+          frameborder="0"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+          title="Vidéo du projet">
+        </iframe>
+      </div>
+
+      <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/un_dialogue.jpg" alt="Image du projet 2" data-src="../images/un_dialogue.jpg">
+        <img src="../images/dialogue1.tif" alt="Image du projet 3" data-src="../images/dialogue1.tif">
+      
+      </div>
+
+      
+
+    <!-- Fenêtre modale (hidden par défaut) -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="Agrandissement">
+</div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>

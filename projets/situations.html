@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <title>situations_marina_smorodinova</title>
+ <link rel="stylesheet" href="projects.css" />
+</head>
+<body class="projects-body">
+
+
+<!-- Conteneur global du header -->
+<div class="header-container">
+ <!-- Bouton de retour -->
+ <a href="projects_all.html" class="back-button" aria-label="Retour">
+   <img src="../icons/door2.svg" alt="Retour" class="icon-door">
+ </a>
+
+
+ <!-- Header principal -->
+ <header class="header">
+   <div class="left-block">
+     <a href="bio.html" class="logo">marina smorodinova</a>
+   </div>
+   <div class="right-block">
+     <a href="projects_all.html" class="menu-link">studio</a>
+   </div>
+ </header>
+</div>
+
+
+
+
+<main class="projects-page">
+ <div class="projects-left">
+   <div class="projects-text">
+     <p><strong>Situations</strong></p>
+       <p>dessins</p>
+       <p>2015-2020</p>
+       <p>Un train, une salle de cinéma, une bibliothèque. Chaque jour j’observe des petites
+situations de forte intensité de présence humaine. Je sens qu’il y a toute une histoire à
+raconter à partir de ce moment précis. Je ne sors pas mon appareil photo, mais j’essaie
+de les mémoriser et de les retranscrire sur le papier par le biais de dessin.</p>
+
+     <p>___</p>
+       <p><strong>Journal du bord :</strong></p>
+       <p>Le dessin, pour moi, est une forme libre, simple et solitaire d’expression.
+À la base, faire un croquis rapide me permet de capturer une situation, une émotion, une atmosphère,
+qui pourra ensuite devenir un film ou une performance. 
+       </p>
+   </div>
+ </div>
+
+
+<!-- MÉDIAS À DROITE -->
+    <div class="project-media">
+    
+      <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/situations2_marina_smorodinova.jpg" alt="Image du projet 2" data-src="../images/situation2©marina_smorodinova.jpg">
+        <img src="../images/situations3_marina_smorodinova.jpg" alt="Image du projet 3" data-src="../images/situation3©marina_smorodinova.jpg">
+        <img src="../images/situations1_marina_smorodinova.jpg" alt="Image du projet 4" data-src="../images/situations1©marina_smorodinova.jpg">
+
+      </div>
+
+       <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/situations4_marina_smorodinova.jpg" alt="Image du projet 2" data-src="../images/situations4_marina_smorodinova.jpg">
+        <img src="../images/situations_marina_smorodinova.jpg" alt="Image du projet 3" data-src="../images/situations_marina_smorodinova.jpg">
+
+      </div>
+
+    <!-- Fenêtre modale (hidden par défaut) -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="Agrandissement">
+</div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>

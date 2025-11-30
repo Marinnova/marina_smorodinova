@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>de_la_terre_a_la_terre_marina_smorodinova</title>
+  <link rel="stylesheet" href="projects.css" />
+</head>
+
+<body class="projects-body">
+
+  <!-- HEADER -->
+  <div class="header-container">
+    <a href="projects_all.html" class="back-button" aria-label="Retour">
+      <img src="../icons/door2.svg" alt="Retour" class="icon-door">
+    </a>
+
+    <header class="header">
+      <div class="left-block">
+        <a href="../projets/bio.html" class="logo">marina smorodinova</a>
+      </div>
+      <div class="right-block">
+        <a href="projects_all.html" class="menu-link">studio</a>
+      </div>
+    </header>
+  </div>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="projects-page">
+    <!-- TEXTE À GAUCHE -->
+    <div class="projects-left">
+      <div class="projects-text">
+        <p><strong>De la terre à la Terre</strong></p>
+        <p>Vidéo d'essai, 2022, Durée : 11min </p>
+        <p>Habitant dans une zone anciennement agricole, je suis partie à la recherche d’un récit sensible 
+          capable d’évoquer la question de la consommation alimentaire.
+Le film est composé à partir de photographies d’archives familiales et de 
+celles de la ville de Villepinte, ainsi que d’extraits vidéo réalisés 
+avec des groupes de jeunes autour du thème de l’alimentation, pendant une résidence à la Ferme Godier (Villepinte) en 2021.</p>      
+        <p>___</p>
+
+        <p><strong>Journal du bord :</strong></p>
+        <p>Cette vidéo est née d’un questionnement sur l’alimentation des villes en France.
+Après le Covid et la naissance de mon enfant, les questions liées à l’alimentation sont devenues mes principales préoccupations.</p>
+        <p>C’est aussi à ce moment-là qu’a eu lieu ma rencontre avec Rungis et avec "Genèse d'un repas" de Luc Moullet, 1977.</p>
+      </div>
+    </div>
+
+    <!-- MÉDIAS À DROITE -->
+    <div class="project-media">
+      <!-- Vidéo -->
+      <div class="video-container">
+        <iframe 
+          src="https://player.vimeo.com/video/579165991"
+          frameborder="0"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+          title="Vidéo du projet">
+        </iframe>
+      </div>
+
+      <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/de_la_terre_a_la_terre_marina_smorodinova_2.jpg" alt="Image du projet 1" data-src="../images/de_la_terre_a_la_terre_marina_smorodinova_2.jpg">
+        <img src="../images/de_la_terre_a_la_terre_marina_smorodinova3.jpg" alt="Image du projet 2" data-src="../images/de_la_terre_a_la_terre_marina_smorodinova_3.jpg">
+        <img src="../images/de_la_terre_la_terre_marina_smorodinova_5.jpg" alt="Image du projet 3" data-src="../images/de_la_terre_a_la_terre_marina_smorodinova_5.jpg">
+      </div>
+
+    <!-- Fenêtre modale (hidden par défaut) -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="Agrandissement">
+</div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>

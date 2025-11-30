@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>vasiliy_l_ordinaire_marina_smorodinova</title>
+  <link rel="stylesheet" href="projects.css" />
+</head>
+
+<body class="projects-body">
+
+  <!-- HEADER -->
+  <div class="header-container">
+    <a href="projects_all.html" class="back-button" aria-label="Retour">
+      <img src="../icons/door2.svg" alt="Retour" class="icon-door">
+    </a>
+
+    <header class="header">
+      <div class="left-block">
+        <a href="../index1.html" class="logo">marina smorodinova</a>
+      </div>
+      <div class="right-block">
+        <a href="projects_all.html" class="menu-link">studio</a>
+      </div>
+    </header>
+  </div>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="projects-page">
+    <!-- TEXTE À GAUCHE -->
+    <div class="projects-left">
+      <div class="projects-text">
+        <p><strong>Vasiliy l'Ordinaire</strong></p>
+        <p>2025, en cours d'écriture </p>
+        <p>Au fil des années, mon père s’est transformé. D’abord, ce sont ses mains que j’ai vues transformées. 
+Puis, le torse et le dos. Ensuite les jambes. Et enfin, le visage.</p>
+        <p>Je pense que c’est une personne queer, mais il ne
+le sait pas, car il ne connaît même pas ce mot. Il est russe
+et vit dans la Russie contemporaine, où, aujourd’hui,
+l’homosexualité, la non-binarité et les personnes trans sont
+considérées, sur le plan législatif, comme des terroristes et
+des extrémistes.</p>
+        <p>Depuis quelques années, il est logé dans un morceau
+de terre de trois mètres carrés, avec un petit banc pour
+recevoir les visiteurs. Il y a aussi une pierre tombale, sur
+laquelle figure un portrait de lui âgé, sans aucune trace de
+ses tatouages, piercings et tresses colorées. Juste le portrait
+d’un monsieur tout-le-monde, comme si de rien n’était. Combien d’autres personnes 
+ont vu leur identité s’effacer pendant leur vie ou après leur
+mort ?</p>
+        <p>___</p>
+        <p><strong>Journal du projet :</strong></p>
+        <p>J'ai obtenu l'aide d'Adagp pour la recherche autour de ce film en cours d'écriture.
+        Maintenant j'ai plus de temps pour faire des tests de traitement d'image numériques.</p>
+        <p>Je recommande l'article d'Anna Sokolova, "There is no Death… Soviet Funeral Reforming en Marche", publié en 2023.</p>
+      </div>
+    </div>
+
+    <!-- MÉDIAS À DROITE -->
+    <div class="project-media">
+      <!-- Vidéo -->
+      <div class="video-container">
+        <iframe 
+          src="https://player.vimeo.com/video/1129903587"
+          frameborder="0"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+          title="Vidéo du projet">
+        </iframe>
+      </div>
+
+      <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/Vasiliy4_Marina_Smorodinova.JPEG" alt="Image du projet 1" data-src="../images/Vasiliy4_Marina_Smorodinova.JPEG">
+        <img src="../images/Vasiliy1_Marina_Smorodinova.JPEG" alt="Image du projet 2" data-src="../images/Vasiliy1_Marina_Smorodinova.JPEG">
+        <img src="../images/Vasiliy3_Marina_Smorodinova.jpg" alt="Image du projet 3" data-src="../images/Vasiliy3_Marina_Smorodinova.jpg">
+      </div>
+
+    <!-- Fenêtre modale (hidden par défaut) -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="Agrandissement">
+</div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>

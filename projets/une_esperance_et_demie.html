@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>une_esperance_et_demie_marina_smorodinova</title>
+  <link rel="stylesheet" href="projects.css" />
+</head>
+
+<body class="projects-body">
+
+  <!-- HEADER -->
+  <div class="header-container">
+    <a href="projects_all.html" class="back-button" aria-label="Retour">
+      <img src="../icons/door2.svg" alt="Retour" class="icon-door">
+    </a>
+
+    <header class="header">
+      <div class="left-block">
+        <a href="../index1.html" class="logo">marina smorodinova</a>
+      </div>
+      <div class="right-block">
+        <a href="projects_all.html" class="menu-link">studio</a>
+      </div>
+    </header>
+  </div>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="projects-page">
+    <!-- TEXTE À GAUCHE -->
+    <div class="projects-left">
+      <div class="projects-text">
+        <p><strong>Une espérance et demie</strong></p>
+        <p>Court-métrage, 2017, durée : 11 minutes</p>
+        <p>En Russie, le Nouvel An est la fête la plus importante de l’année : on s’y prépare,
+on fait des cadeaux. On dit que la manière dont on accueille le nouvel an définit celle dont
+on vivra les douze prochains mois. Pour une personne, cela signifie une table bien remplie,
+pour une autre - une maison impeccable, etc. Sauf qu’aujourd’hui, femmes et hommes sont
+actifs et travaillent tous le 31 décembre, un jour d’autant plus intense qu’il faut achever
+les travaux de fin d’année. Cette incohérence entre la tradition et l’organisation sociale
+d’aujourd’hui couve un conflit latent que ce film révèle à travers les actions des personnages
+et des non-dits qui s’installent entre eux.</p>
+        <p>___</p>
+
+        <p><strong>Journal du bord :</strong></p>
+        <p>Tourné à Saint-Pétersbourg, dans un appartement typique de la ville.
+Le scénario s’écrivait au jour le jour.
+C’est ma première fiction — brute, imparfaite, parfois trop stylisée,
+mais portée par des acteur·rice·s non professionnel·le·s magnifiques.</p>
+      </div>
+    </div>
+
+    <!-- MÉDIAS À DROITE -->
+    <div class="project-media">
+      <!-- Vidéo -->
+      <div class="video-container">
+        <iframe 
+          src="https://player.vimeo.com/video/171122892"
+          frameborder="0"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+          title="Vidéo du projet">
+        </iframe>
+      </div>
+
+      <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/une_esperance_et_demie1.1.jpg" alt="Image du projet 1" data-src="../images/une_esperance_et_demie1.1.jpg">
+        <img src="../images/une_esperance_et_demie2.jpg" alt="Image du projet 2" data-src="../images/une_esperance_et_demie2.jpg">
+        <img src="../images/une_esperance_et_demie3.jpg" alt="Image du projet 3" data-src="../images/une_esperance_et_demie3.jpg">
+      </div>
+
+    <!-- Fenêtre modale (hidden par défaut) -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="Agrandissement">
+</div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>

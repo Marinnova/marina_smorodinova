@@ -1,0 +1,370 @@
+/* =============================
+   POLICES & BODY
+============================= */
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  background: white;
+  overflow: hidden; /* empêche le scroll global */
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Pour la page Projects : autoriser le scroll interne */
+body.projects-body {
+  overflow: auto; /* autorise le scroll sur cette page uniquement */
+}
+
+/* =============================
+   HEADER
+============================= */
+.header {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  right: 60px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 30;
+}
+
+.header a {
+  text-decoration: none;
+  font-size: 50px;
+  color: transparent;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(5, 60, 54, 0.7) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  background-position: var(--x, 50%) 0%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: background-position 0.05s ease-out;
+}
+
+/* =============================
+   BOUTON DE RETOUR
+============================= */
+.back-button {
+  position: fixed;
+  top: 150px;
+  left: 50px;
+  z-index: 1000;
+}
+
+.back-button .icon-door {
+  width: 50px;
+  height: 50px;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.back-button .icon-door:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+
+
+/* =============================
+   BLOQUE VERTICAL DROIT POUR LA BIO
+============================= */
+.bio-right {
+  position: absolute;
+  top: 200px;
+  right: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+  max-width: 300px;
+  z-index: 10;
+}
+
+.bio-right .bio-text p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.4;
+  color: rgb(49, 95, 80);
+  writing-mode: horizontal-tb; /* texte horizontal */
+  transform: rotate(0deg); /* pour que la lecture se fasse top → bottom */
+}
+
+.bio-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.bio-icon img {
+  width: 32px;
+  height: 32px;
+  transition: opacity 0.3s;
+}
+.bio-icon img:hover {
+  opacity: 1;
+}
+
+/* =============================
+   BLOQUE VERTICAL GAUCHE POUR LE PROJECTS
+============================= */
+.projects-left {
+  position: absolute;
+  top: 200px;
+  left: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+  max-width: 300px;
+  z-index: 10;
+}
+
+.projects-left .projects-text p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.4;
+  color: rgb(49, 95, 80);
+  writing-mode: horizontal-tb; /* texte horizontal */
+  transform: rotate(0deg); /* pour que la lecture se fasse top → bottom */
+}
+
+
+/* =============================
+   MOTS CACHÉS / SPOTLIGHT
+============================= */
+.mots-caches {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.mots-caches .reveal-text {
+  position: absolute;
+  opacity: 0.3;
+  font-size: 18px;
+  white-space: nowrap;
+  color: rgba(64,224,208,0.95);
+  transition: opacity 0.2s, filter 0.2s;
+}
+
+.mots-caches .reveal-text.revealed {
+  opacity: 1;
+}
+
+/* positions aléatoires */
+.mots-caches .reveal-text:nth-child(1) { top: 25%; left: 400px; }
+.mots-caches .reveal-text:nth-child(2) { top: 30%; left: 300px; }
+.mots-caches .reveal-text:nth-child(3) { top: 28%; left: 500px; }
+.mots-caches .reveal-text:nth-child(4) { top: 35%; left: 200px; }
+.mots-caches .reveal-text:nth-child(5) { top: 45%; left: 150px; }
+.mots-caches .reveal-text:nth-child(6) { top: 55%; left: 50px; }
+.mots-caches .reveal-text:nth-child(7) { top: 65%; left: 350px; }
+.mots-caches .reveal-text:nth-child(8) { top: 75%; left: 100px; }
+.mots-caches .reveal-text:nth-child(9) { top: 85%; left: 250px; }
+.mots-caches .reveal-text:nth-child(10) { top: 60%; left: 600px; }
+.mots-caches .reveal-text:nth-child(11) { top: 20%; left: 570px; }
+.mots-caches .reveal-text:nth-child(12) { top: 80%; left: 700px; }
+.mots-caches .reveal-text:nth-child(13) { top: 23%; left: 130px; }
+.mots-caches .reveal-text:nth-child(14) { top: 33%; left: 800px; }
+.mots-caches .reveal-text:nth-child(15) { top: 30%; left: 110px; }
+.mots-caches .reveal-text:nth-child(16) { top: 38%; left: 640px; }
+.mots-caches .reveal-text:nth-child(17) { top: 59%; left: 750px; }
+.mots-caches .reveal-text:nth-child(18) { top: 65%; left: 80px; }
+.mots-caches .reveal-text:nth-child(19) { top: 70%; left: 670px; }
+.mots-caches .reveal-text:nth-child(20) { top: 85%; left: 900px; }
+.mots-caches .reveal-text:nth-child(21) { top: 60%; left: 460px; }
+.mots-caches .reveal-text:nth-child(22) { top: 50%; left: 570px; }
+
+/* =============================
+   LAMPE POUR SPOTLIGHT
+============================= */
+#lampe {
+  position: fixed;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(64,224,208,0.55) 0%, rgba(64,224,208,0.25) 30%, rgba(64,224,208,0.0) 55%);
+  mix-blend-mode: screen;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+/* =============================
+   RESPONSIVE
+============================= */
+@media (max-width: 768px) {
+  .bio-right {
+    position: relative;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 80vw;
+    gap: 15px;
+    top: auto;
+    right: auto;
+    padding: 20px;
+  }
+
+  .bio-right .bio-text p {
+    writing-mode: horizontal-tb;
+    transform: rotate(0deg);
+    font-size: 16px;
+  }
+
+  .bio-icons {
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+
+
+/* Conteneur global - aligne left (texte) et right (vidéos) */
+.projects-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; /* le scroll global doit rester propre */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 120px 60px; /* laisser la place pour le header */
+  box-sizing: border-box;
+}
+
+/* Bloc gauche : texte vertical (garde la logique du site) */
+.projects-left {
+  width: 280px;
+  max-width: 28ch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* texte horizontal mais bloc vertical */
+  gap: 24px;
+  z-index: 10;
+}
+
+/* Texte : empilé verticalement (tu peux switcher en vertical-rl si tu veux) */
+.projects-text p {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgb(49,95,80);
+  writing-mode: horizontal-tb; /* texte lisible horizontalement */
+}
+
+/* Social icons (droite-bas sur la page d'accueil) : on force position bas-droite */
+.projects-left .socials {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+/* RESPONSIVE : empiler sur mobile */
+@media (max-width: 900px) {
+  .projects-page {
+    padding: 80px 20px;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-y: auto;
+    height: auto;
+  }
+
+  .projects-left {
+    order: 2;
+    width: 100%;
+    max-width: none;
+  }
+
+  .projects-videos {
+    order: 1;
+    width: 100%;
+  }
+
+  .videos-column {
+    width: 100%;
+    max-height: 50vh;
+  }
+
+  .video-item {
+    height: calc(60vw * 16 / 9); /* adaptatif */
+  }
+}
+
+
+/* === PAGE PROJECTS === */
+
+.projects-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 100px 60px;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Colonne gauche texte */
+.projects-left {
+  flex: 1;
+  max-width: 40%;
+  padding-right: 60px;
+}
+
+.projects-text p {
+  margin-bottom: 1.2em;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Colonne droite vidéos */
+.projects-videos {
+  flex-shrink: 0;
+  width: 420px;
+  height: 80vh;
+  position: sticky;
+  top: 100px; /* pour qu’elle reste visible */
+  overflow: hidden;
+}
+
+.videos-column {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  scroll-behavior: smooth;
+}
+
+.video-item {
+  position: relative;
+  width: 100%;
+  height: 600px; /* adapte à ton ratio vertical */
+  overflow: hidden;
+  border-radius: 12px;
+  background: #000;
+}
+
+.video-item iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit: cover;
+}
+
+/* Scrollbar discrète */
+.videos-column::-webkit-scrollbar {
+  width: 6px;
+}
+.videos-column::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 999px;
+}

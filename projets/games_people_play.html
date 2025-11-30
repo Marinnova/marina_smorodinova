@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <title>games_people_play_marina_smorodinova</title>
+ <link rel="stylesheet" href="projects.css" />
+</head>
+<body class="projects-body">
+
+
+<!-- Conteneur global du header -->
+<div class="header-container">
+ <!-- Bouton de retour -->
+ <a href="projects_all.html" class="back-button" aria-label="Retour">
+   <img src="../icons/door2.svg" alt="Retour" class="icon-door">
+ </a>
+
+
+ <!-- Header principal -->
+ <header class="header">
+   <div class="left-block">
+     <a href="bio.html" class="logo">marina smorodinova</a>
+   </div>
+   <div class="right-block">
+     <a href="projects_all.html" class="menu-link">studio</a>
+   </div>
+ </header>
+</div>
+
+
+
+
+<main class="projects-page">
+ <div class="projects-left">
+   <div class="projects-text">
+     <p><strong>Games people play</strong></p>
+       <p>installation vidéo et dessins</p>
+       <p>2017 - en cours</p>
+       <p>Les dessins comme les vidéos sont un mélange
+défini entre l’imagination et l’observation du réel,
+entre la sélection et la mise en scène, entre individus
+remarqué et le souvenir qu’ils laissent. Le titre de
+l’exposition fait référence à l’ouvrage d’Eric Berne,
+Games People Play. The Psychology of Human Relations.</p>
+    
+        <p>___</p>
+       <p><strong>Journal du projet :</strong></p>
+    
+       <p>Je continue d’alimenter les vidéos de ce projet avec de petites scènes capturées au quotidien, souvent saisies sur le vif et filmées avec mon téléphone.</p>
+   </div>
+ </div>
+
+
+<!-- MÉDIAS À DROITE -->
+    <div class="project-media">
+    
+      <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/games_people_play_marina_smorodinova_3.jpg" alt="Image du projet 2" data-src="../images/games_people_play_marina_smorodinova_3.jpg">
+        <img src="../images/games_people_play_4.jpg" alt="Image du projet 3" data-src="../images/games_people_play.jpg">
+      
+      </div>
+
+       <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/games_people_play_marina_smorodinova_2.jpg" alt="Image du projet 2" data-src="../images/games_people_play_marina_smorodinova_2.jpg">
+        <img src="../images/games_people_play_marina_smorodinova_5.jpg" alt="Image du projet 3" data-src="../images/games_people_play_marina_smorodinova_5.jpg">
+
+      </div>
+
+    <!-- Fenêtre modale (hidden par défaut) -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="Agrandissement">
+</div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>

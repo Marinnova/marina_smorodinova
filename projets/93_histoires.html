@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <title>93_histoires_marina_smorodinova</title>
+ <link rel="stylesheet" href="projects.css" />
+</head>
+<body class="projects-body">
+
+
+<!-- Conteneur global du header -->
+<div class="header-container">
+ <!-- Bouton de retour -->
+ <a href="projects_all.html" class="back-button" aria-label="Retour">
+   <img src="../icons/door2.svg" alt="Retour" class="icon-door">
+ </a>
+
+
+ <!-- Header principal -->
+ <header class="header">
+   <div class="left-block">
+     <a href="bio.html" class="logo">marina smorodinova</a>
+   </div>
+   <div class="right-block">
+     <a href="projects_all.html" class="menu-link">studio</a>
+   </div>
+ </header>
+</div>
+
+
+
+
+<main class="projects-page">
+ <div class="projects-left">
+   <div class="projects-text">
+     <p><strong>93 histoires</strong></p>
+       <p>installation : photographies imprimées, audio, vidéo, images d'archives</p>
+       <p>2025, en cours</p>
+       <p>Le nord de 93 connaisse un processus de changement
+lié à l’évolution de la ville de Paris, et parallèlement les habitants
+d’anciennes maisons continuent à vivre au sein d’un
+environnement en mouvement. C'est un projet qui prend la forme
+d’une recherche de territoire, surtout autour des territoires de Saint-Denis, d'Aubervilliers et de Courneuve.</p>
+        <p>Il s'agit de recueillir des histoires, des images d'archives et des prises de vue pour créer une installation qui reflète la complexité et la richesse de ce territoire en mutation.</p>
+        <p>___</p>
+       <p><strong>Journal du projet :</strong></p>
+       <p>Après avoir passé dix après-midi dans les archives d’Aubervilliers, j’ai constitué un stock de photographies d’archives — souvent des images d’amateurs qui montrent la vie quotidienne.
+Elles racontent beaucoup de choses, et rien de précis à la fois.
+J’observe, et j’attends de voir où cela m’emmène.</p>
+       <p>Le 93, c’est le territoire que j’habite — et qui m’habite aussi.
+C’est mon slow project, sans contrainte ni urgence de rendu.
+J’ai le temps de le vivre.</p>
+    
+   </div>
+ </div>
+
+
+<!-- MÉDIAS À DROITE -->
+    <div class="project-media">
+    
+      <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/archivage_2_marina_smorodinova.jpg" alt="Image du projet 2" data-src="../images/archivage_2_marina_smorodinova.jpg">
+        <img src="../images/permis_de_construire3.jpg" alt="Image du projet 3" data-src="../images/permis_de_construire3.jpg">
+        <img src="../images/permis_de_construire1.jpg" alt="Image du projet 4" data-src="../images/permis_de_construire1.jpg">
+
+      </div>
+
+       <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/93_histoires_marina_smorodinova.jpg" alt="Image du projet 2" data-src="../images/93_histoires_marina_smorodinova.jpg">
+        <img src="../images/93_histoire_marina_smorodinova_2.jpg" alt="Image du projet 3" data-src="../images/93_histoires_marina_smorodinova_2.jpg">
+        <img src="../images/93_histoires_marina_smorodinova_3.jpg" alt="Image du projet 4" data-src="../images/93_histoires_marina_smorodinova_3.jpg">
+
+      </div>
+
+    <!-- Fenêtre modale (hidden par défaut) -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="Agrandissement">
+</div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>

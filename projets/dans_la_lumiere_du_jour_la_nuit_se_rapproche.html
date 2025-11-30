@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <title>dans_la_lumiere_du_jour_la_nuit_se_rapproche_marina_smorodinova</title>
+ <link rel="stylesheet" href="projects.css" />
+</head>
+<body class="projects-body">
+
+
+<!-- Conteneur global du header -->
+<div class="header-container">
+ <!-- Bouton de retour -->
+ <a href="projects_all.html" class="back-button" aria-label="Retour">
+   <img src="../icons/door2.svg" alt="Retour" class="icon-door">
+ </a>
+
+
+ <!-- Header principal -->
+ <header class="header">
+   <div class="left-block">
+     <a href="bio.html" class="logo">marina smorodinova</a>
+   </div>
+   <div class="right-block">
+     <a href="projects_all.html" class="menu-link">studio</a>
+   </div>
+ </header>
+</div>
+
+
+
+
+<main class="projects-page">
+ <div class="projects-left">
+   <div class="projects-text">
+     <p><strong>Dans la lumière du jour la nuit se rapproche</strong></p>
+       <p>installation photographique</p>
+       <p>2015</p>
+       <p>Comment raconter le temps et son écoulement à travers l’image fixe ?
+Certains épisodes du quotidien, des moments simples, deviennent en quelque sorte les “lieux” ou “espaces topiques” de cette recherche du temps qui passe. 
+</p>
+    
+        <p>___</p>
+       <p><strong>Journal du bord :</strong></p>
+       <p>Les voyages sans but s’entremêlent ici : la France, la Russie, l’Allemagne.</p>
+   </div>
+ </div>
+
+
+<!-- MÉDIAS À DROITE -->
+    <div class="project-media">
+    
+      <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/dans_la_lumiere_marina_smorodinova_vue_d_exposition.jpg" alt="Image du projet 2" data-src="../images/dans_la_lumiere_marina_smorodinova_vue_d_exposition.jpg">
+        <img src="../images/smorodinova_3.jpg" alt="Image du projet 3" data-src="../images/smorodinova_3.jpg">
+        <img src="../images/smorodinova_1.jpg" alt="Image du projet 4" data-src="../images/smorodinova_1.jpg">
+
+      </div>
+
+       <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/smorodinova_4.jpg" alt="Image du projet 2" data-src="../images/smorodinova_4.jpg">
+        <img src="../images/smorodinova_7.jpg" alt="Image du projet 3" data-src="../images/smorodinova_7.jpg">
+        <img src="../images/smorodinova_2.gif" alt="Image du projet 3" data-src="../images/smorodinova_2.gif">
+      
+      </div>
+
+    <!-- Fenêtre modale (hidden par défaut) -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="Agrandissement">
+</div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>

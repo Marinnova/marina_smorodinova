@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <title>missing_marina_smorodinova</title>
+ <link rel="stylesheet" href="projects.css" />
+</head>
+<body class="projects-body">
+
+
+<!-- Conteneur global du header -->
+<div class="header-container">
+ <!-- Bouton de retour -->
+ <a href="projects_all.html" class="back-button" aria-label="Retour">
+   <img src="../icons/door2.svg" alt="Retour" class="icon-door">
+ </a>
+
+
+ <!-- Header principal -->
+ <header class="header">
+   <div class="left-block">
+     <a href="bio.html" class="logo">marina smorodinova</a>
+   </div>
+   <div class="right-block">
+     <a href="projects_all.html" class="menu-link">studio</a>
+   </div>
+ </header>
+</div>
+
+
+
+
+<main class="projects-page">
+ <div class="projects-left">
+   <div class="projects-text">
+     <p><strong>Missing</strong></p>
+       <p>installation photographique</p>
+       <p>2013-2015</p>
+       <p>Quand quelque chose ou quelqu’un nous manque, est-ce cette personne, cet endroit où
+bien le moment passé qui nous manque, l’expérience vécue à ce moment ? Quelle place
+ces moments passés prennent-ils dans notre vie ? En s’inspirant des lieux différents, ces
+photographies sont le mélange d’expérience de “manque d’un lieu” vécue par plusieurs
+personnes, y compris moi.</p>
+    
+        <p>___</p>
+       <p><strong>Journal du bord :</strong></p>
+       <p>Mon deuil pour la ville que j’ai adorée et que j’ai dû quitter.
+Pour ne pas rester dans cet état de manque, j’ai passé beaucoup de temps à me questionner : pourquoi ce sentiment de “manque” existe-t-il ?
+Qu’est-ce qui me manque et comment puis-je recréer ces espaces absents dans ma vie actuelle ?
+       </p>
+   </div>
+ </div>
+
+
+<!-- MÉDIAS À DROITE -->
+    <div class="project-media">
+    
+      <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/missing.jpg" alt="Image du projet 2" data-src="../images/missing.jpg">
+        <img src="../images/missing1-web.jpg" alt="Image du projet 3" data-src="../images/missing1-web.jpg">
+        <img src="../images/missing2web.jpg" alt="Image du projet 4" data-src="../images/missing2web.jpg">
+      
+      </div>
+
+       <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/missing4web.jpg" alt="Image du projet 2" data-src="../images/missing4web.jpg">
+        <img src="../images/missing5web.jpg" alt="Image du projet 3" data-src="../images/missing5web.jpg">
+
+      </div>
+
+    <!-- Fenêtre modale (hidden par défaut) -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="Agrandissement">
+</div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>

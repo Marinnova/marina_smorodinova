@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <title>les_activites_du_dimanche_marina_smorodinova</title>
+ <link rel="stylesheet" href="projects.css" />
+</head>
+<body class="projects-body">
+
+
+<!-- Conteneur global du header -->
+<div class="header-container">
+ <!-- Bouton de retour -->
+ <a href="projects_all.html" class="back-button" aria-label="Retour">
+   <img src="../icons/door2.svg" alt="Retour" class="icon-door">
+ </a>
+
+
+ <!-- Header principal -->
+ <header class="header">
+   <div class="left-block">
+     <a href="bio.html" class="logo">marina smorodinova</a>
+   </div>
+   <div class="right-block">
+     <a href="projects_all.html" class="menu-link">studio</a>
+   </div>
+ </header>
+</div>
+
+
+
+
+<main class="projects-page">
+ <div class="projects-left">
+   <div class="projects-text">
+     <p><strong>Les activités du dimanche</strong></p>
+       <p>installation vidéo</p>
+       <p>2016</p>
+       <p>"L’ennui. Et les moyens de le dissiper. Marche. Spectacle.
+L’attente. Ou si l’on veut lui donner de la valeur, le repos.
+La solitude. Et la quête de l’autre, le besoin du groupe, la famille.
+Ce sont ces rites du dimanche que suit la caméra de la jeune artiste.
+Elle les donne à voir dans leur absolue entièreté, faits de pleins et de vides,
+de mouvement et d’immobilisme, d’isolements et de communions.
+Les trois vidéos tournent sans fin, réécriture en boucle des détails d’un
+quotidien répétitif et occasionnel. La ballade aveugle, l’anniversaire au bar
+et le public de la salle de jazz." --- fragment du texte de Marc Aufraise</p>
+
+    
+        <p>___</p>
+       <p><strong>Journal du bord :</strong></p>
+       <p>.Le dimanche dans une petite ville française a été une expérience très particulière pour moi, moi qui avais l’habitude de vivre dans une grande ville qui ne s’arrête jamais.</p>
+   </div>
+ </div>
+
+
+<!-- MÉDIAS À DROITE -->
+    <div class="project-media">
+    
+      <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/les_activites_du_dimanche_octave_cowbell_metz.jpg" alt="Image du projet 2" data-src="../images/les_activites_du_dimanche_octave_cowbell_metz.jpg">
+        <img src="../images/les_activites_du_dimanche_marina_smorodinova.jpg" alt="Image du projet 3" data-src="../images/les_activites_du_dimanche_marina_smorodinova.jpg">
+      </div>
+
+       <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/une_promenade_activites_du_dimanche_2016_1.jpg" alt="Image du projet 2" data-src="../images/une_promenade_activites_du_dimanche_2016_1.jpg">
+        <img src="../images/bistrot_du_cartier_les_activites_du_dimanche.jpg" alt="Image du projet 3" data-src="../images/bistrot_du_cartier_les_activites_du_dimanche.jpg">
+      
+      </div>
+
+    <!-- Fenêtre modale (hidden par défaut) -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="Agrandissement">
+</div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>

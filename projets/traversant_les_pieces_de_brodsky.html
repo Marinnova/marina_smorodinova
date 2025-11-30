@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>traversant_les_pieces_de_brodsky_marina_smorodinova</title>
+  <link rel="stylesheet" href="projects.css" />
+</head>
+
+<body class="projects-body">
+
+  <!-- HEADER -->
+  <div class="header-container">
+    <a href="projects_all.html" class="back-button" aria-label="Retour">
+      <img src="../icons/door2.svg" alt="Retour" class="icon-door">
+    </a>
+
+    <header class="header">
+      <div class="left-block">
+        <a href="../bio.html" class="logo">marina smorodinova</a>
+      </div>
+      <div class="right-block">
+        <a href="projects_all.html" class="menu-link">studio</a>
+      </div>
+    </header>
+  </div>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="projects-page">
+    <!-- TEXTE À GAUCHE -->
+    <div class="projects-left">
+      <div class="projects-text">
+        <p><strong>Traversant les pièces de Brodsky</strong></p>
+        <p>performance, 20 minutes, 2021</p>
+        <p>Dans cette performance je m’inspire des descriptions de certains espaces de
+poèmes de Joseph Brodsky. Les déplacements, le regard posé et la traduction libre en russe et en français
+composent cette performance solo. Plusieurs poèmes rassemblés en un seul et même
+“voyage” de mon corps dans l’espace de la performance, pensé comme un montage
+cinématographique, une séquence. Chaque poème est réduit à quelques phrases, voir à quelques mots.</p>
+        <p>___</p>
+
+        <p><strong>Journal du bord :</strong></p>
+    
+        <p>La première fois que j’ai performé cette pièce devant un petit groupe, une amie m’a conseillé de compter dans ma tête pour apprendre à prendre le temps.
+Alors j’ai compté. Je me disais qu’à ce moment de ma vie, il m’était plus simple d’aller vite — plus difficile, mais possible — d’aller au ralenti.
+Performer au rythme du temps astronomique restait pourtant un véritable défi pour moi.</p>
+      </div>
+    </div>
+
+    <!-- MÉDIAS À DROITE -->
+    <div class="project-media">
+      <!-- Vidéo -->
+      <div class="video-container">
+        <iframe 
+          src="https://player.vimeo.com/video/1123861367"
+          frameborder="0"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+          title="Vidéo du projet">
+        </iframe>
+      </div>
+
+      <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/marina_smorodinova_traversant_les_pieces_de_brodsky_1.jpg" alt="Image du projet 1" data-src="../images/marina_smorodinova_traversant_les_pieces_de_brodsky_1.jpg">
+        <img src="../images/marina_smorodinova_traversant_les_pieces_de_brodsky_6.jpg" alt="Image du projet 2" data-src="../images/marina_smorodinova_traversant_les_pieces_de_brodsky_6.jpg">
+        <img src="../images/marina_smorodinova_traversant_les_pieces_de_brodsky_5.jpg" alt="Image du projet 3" data-src="../images/marina_smorodinova_traversant_les_pieces_de_brodsky_5.jpg">
+      </div>
+
+    <!-- Fenêtre modale (hidden par défaut) -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="Agrandissement">
+</div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>un_ete_en_pleine_liberte_marina_smorodinova</title>
+  <link rel="stylesheet" href="projects.css" />
+</head>
+
+<body class="projects-body">
+
+  <!-- HEADER -->
+  <div class="header-container">
+    <a href="projects_all.html" class="back-button" aria-label="Retour">
+      <img src="../icons/door2.svg" alt="Retour" class="icon-door">
+    </a>
+
+    <header class="header">
+      <div class="left-block">
+        <a href="../index1.html" class="logo">marina smorodinova</a>
+      </div>
+      <div class="right-block">
+        <a href="projects_all.html" class="menu-link">studio</a>
+      </div>
+    </header>
+  </div>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="projects-page">
+    <!-- TEXTE À GAUCHE -->
+    <div class="projects-left">
+      <div class="projects-text">
+        <p><strong>Un été, en pleine liberté</strong></p>
+        <p>Court-métrage, 2020, Production : Le Grec, Durée : 16min </p>
+        <p>Biisk est une ville en Altai, une région en Russie, proche
+de Mongolie. Lors de la visite d’Altai on ne s’arrête pas à
+Biisk : il n’y a rien à visiter, rien à voir. Une ville industrielle
+à l’époque, une ville au ralenti aujourd’hui. C’est dans cette
+ville j’ai choisi de suivre des groupes d’enfants pendant un
+mois. Ces enfants acceptent de reproduire leur activités
+quotidiennes, leur passe-temps. Il y a ceux qui s’est ouvert
+devant mes yeux. Il y a des histoires ou des activités qu’ils
+m’ont partagé et qu’on a mis en scène ensemble.</p>
+        
+        <p>___</p>
+
+        <p><strong>Journal du projet :</strong></p>
+        <p>Novembre 2025 - projection au Fresnoy, Tourcoing, France.</p>
+        <p>Tourné en 2015, monté en 2020, ce film vieillit bien pour l’instant.</p>
+      </div>
+    </div>
+
+    <!-- MÉDIAS À DROITE -->
+    <div class="project-media">
+      <!-- Vidéo -->
+      <div class="video-container">
+        <iframe 
+          src="https://player.vimeo.com/video/774448714"
+          frameborder="0"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+          title="Vidéo du projet">
+        </iframe>
+      </div>
+
+      <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/un_ete_en_pleine_liberte_marina_smorodinova.jpg" alt="Image du projet 1" data-src="../images/un_ete_en_pleine_liberte_marina_smorodinova.jpg">
+        <img src="../images/un_ete_en_pleine_liberte10.jpg" alt="Image du projet 2" data-src="../images/un_ete_en_pleine_liberte10.jpg">
+        <img src="../images/un_ete_en_pleine_liberte2.jpg" alt="Image du projet 3" data-src="../images/un_ete_en_pleine_liberte2.jpg">
+      </div>
+
+    <!-- Fenêtre modale (hidden par défaut) -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="Agrandissement">
+</div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>

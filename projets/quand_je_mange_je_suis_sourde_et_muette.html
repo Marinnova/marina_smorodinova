@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>quand_je_mange_je_suis_sourde_et_muette_marina_smorodinova</title>
+  <link rel="stylesheet" href="projects.css" />
+</head>
+
+<body class="projects-body">
+
+  <!-- HEADER -->
+  <div class="header-container">
+    <a href="projects_all.html" class="back-button" aria-label="Retour">
+      <img src="../icons/door2.svg" alt="Retour" class="icon-door">
+    </a>
+
+    <header class="header">
+      <div class="left-block">
+        <a href="../index1.html" class="logo">marina smorodinova</a>
+      </div>
+      <div class="right-block">
+        <a href="projects_all.html" class="menu-link">studio</a>
+      </div>
+    </header>
+  </div>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="projects-page">
+    <!-- TEXTE À GAUCHE -->
+    <div class="projects-left">
+      <div class="projects-text">
+        <p><strong>Quand je mange, je suis sourde et muette</strong></p>
+        <p>2025, en cours </p>
+        <p>Ma fille est née en 2020 dans un contexte multiculturel (franco-
+camerounais par son père et russe par moi). J’ai pris conscience qu'après tant d’années passées en France, je ne savais
+même pas ce qu’était la culture russe, ni comment la transmettre à ma fille.</p>
+        <p>Ainsi a commencé ma quête : celle du
+développement d’un petit enfant dans un contexte
+multiculturel. C’est sur ce chemin que les rencontres et les témoignages
+se sont multipliés. J’y évoque également les bouleversements qu’a connus la culture russe
+depuis la naissance de Noa : la guerre déclarée par
+la Russie à l’Ukraine ; la culpabilité personnelle qui en découle ; l’exil, ainsi que la
+recherche vitale d’une culture existant au-delà de la politique actuelle.</p>
+        <p>___</p>
+
+        <p><strong>Journal du projet :</strong></p>
+        <p>Octobre 2025 - le montage est en cours.</p>
+        <p></p>
+        <p>Je réfléchis beaucoup à la distance que j’entretiens avec la France, la Russie et le Cameroun.
+Comment une certaine distance, bien choisie, peut aider à mener un projet à bien.
+Et comment, parfois, être trop proche d’un sujet peut me paralyser.
+La guerre entre la Russie et l’Ukraine est un sujet trop chargé émotionnellement pour moi ; elle m’immobilise.
+Le film ne parle pas de la guerre, mais il la frôle.
+C’est peut-être l’une des raisons pour lesquelles il m’est si difficile à réaliser.</p>
+      </div>
+    </div>
+
+    <!-- MÉDIAS À DROITE -->
+    <div class="project-media">
+      <!-- Vidéo -->
+      <div class="video-container">
+        <iframe 
+          src="https://player.vimeo.com/video/908597344"
+          frameborder="0"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+          title="Vidéo du projet">
+        </iframe>
+      </div>
+
+      <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/quand_je_mange_2.jpg" alt="Image du projet 1" data-src="../images/quand_je_mange_2.jpg">
+        <img src="../images/quand_je_mange_2_marina_smorodinova.jpg" alt="Image du projet 2" data-src="../images/quand_je_mange_2_marina_smorodinova.jpg">
+        <img src="../images/quand_je_mange_3.jpg" alt="Image du projet 3" data-src="../images/quand_je_mange_3.jpg">
+      </div>
+
+    <!-- Fenêtre modale (hidden par défaut) -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="Agrandissement">
+</div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>
