@@ -21,6 +21,11 @@ body {
   cursor: pointer;
 }
 
+/* Pour la page index : autoriser le scroll interne */
+body.accueil-body {
+  overflow: auto; /* autorise le scroll sur cette page uniquement */
+}
+
 /* HEADER */
 
 .header {
@@ -327,6 +332,47 @@ img.reveal-item.revealed {
 }
 .reveal-item.revealed img {
  filter: brightness(1) opacity(1);
+}
+
+
+/* =============================
+   RESPONSIVE MENU (mobile)
+============================= */
+@media (max-width: 768px) {
+
+  /* Déplacement + réduction du menu gauche/droite */
+  .left-block,
+  .right-block {
+    position: relative;
+    top: 20px;
+    left: 0;
+    right: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+    gap: 12px;
+  }
+
+  /* Texte du menu plus petit et horizontal */
+  .vertical-bio p,
+  .vertical-info p {
+    font-size: 16px;
+    writing-mode: horizontal-tb;
+    transform: rotate(0deg);
+  }
+
+  /* Effet ligne toujours centré */
+  .vertical-bio p::after,
+  .vertical-info p::after {
+    height: 100%;
+    left: 50%;
+  }
+
+  /* Logo / liens de header plus petits */
+  .header a {
+    font-size: 32px;
+  }
 }
 
 
