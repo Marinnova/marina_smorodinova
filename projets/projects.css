@@ -222,7 +222,7 @@ body.projects-body {
  .projects-page {
    flex-direction: column;
    padding: 80px 20px;
-   gap: 40px;
+   gap: 24px;
    height: auto;
  }
 
@@ -401,3 +401,40 @@ iframe {
   color: rgba(0,0,0,0.9);
 }
 
+/* =====================================================
+   RESPONSIVE HEADER
+===================================================== */
+@media (max-width: 900px) {
+
+  .header-container {
+    padding: 10px 20px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header .left-block a,
+  .header .right-block a {
+    font-size: 26px;          /* taille raisonnable sur mobile */
+    background-size: 300% 100%;
+  }
+
+  .back-button {
+    display: none;            /* bouton retour trop grand sur mobile */
+  }
+}
+
+@media (max-width: 600px) {
+
+  .header .left-block a,
+  .header .right-block a {
+    font-size: 22px;
+  }
+
+  .header {
+    gap: 6px;
+  }
+}
