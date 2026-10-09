@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quand je mange, je suis sourde et muette - Marina Smorodinova</title>
+  <link rel="stylesheet" href="projects.css" />
+</head>
+
+<body class="projects-body">
+
+  <!-- HEADER -->
+  <div class="header-container">
+    <a href="projects_all.html" class="back-button" aria-label="Retour">
+      <img src="../icons/door2.svg" alt="Retour" class="icon-door">
+    </a>
+
+    <header class="header">
+      <div class="left-block">
+        <a href="../projets/bio.html" class="logo">marina smorodinova</a>
+      </div>
+      <div class="right-block">
+        <a href="projects_all.html" class="menu-link">studio</a>
+      </div>
+    </header>
+  </div>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="projects-page">
+    <!-- TEXTE À GAUCHE -->
+    <div class="projects-left">
+      <div class="projects-text">
+        <p><strong>MIRT</strong></p>
+        <p>performance duo Nekerina, composé de Manèkè et Marina Smorodinova, 30 minutes, 2026</p>
+        <p>Le myrte est une plante qui, dans la Grèce antique, était consacrée à Aphrodite : l’amour, le désir, le mariage, la fertilité. Mais il est aussi présent dans les rites funéraires méditerranéens et sur certaines tombes. Son feuillage persistant en fait un symbole de ce qui demeure après la disparition.
+En russe, cette même plante s’appelle мирт, que nous écrirons phonétiquement « mirt » en français.
+Durant cette performance, Maneke et Marina Smorodinova rencontrent leurs fantômes : ceux des personnes disparues ou simplement absentes de leur vie, mais aussi ceux des cultures, des langues et des histoires dont elles portent les traces. Des héritages multiples et métissés qui continuent de vivre en elles.
+</p>
+        <p>___</p>
+
+        <p><strong>Journal du bord :</strong></p>
+    
+        <p>Les étapes de création ont été presentés : 
+         <p>mai 2026 - 1km dance CND Pantin</p> 
+        <p>oct 2026 - Le Générateur, Gentilly</p>
+      </div>
+    </div>
+
+    <!-- MÉDIAS À DROITE -->
+    <div class="project-media">
+      <!-- Vidéo -->
+      <div class="video-container">
+        <iframe 
+          src="https://player.vimeo.com/video/1234080612?h=97d1c7bfef"
+          frameborder="0"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+          title="Vidéo du projet">
+        </iframe>
+      </div>
+
+      <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/MIRT 1.jpg" alt="Image du projet 1" data-src="../images/MIRT 1.jpg">
+        <img src="../images/MIRT 2.jpg" alt="Image du projet 2" data-src="../images/MIRT 2.jpg">
+        <img src="../images/MIRT4.jpg" alt="Image du projet 3" data-src="../images/MIRT4.jpg">
+      </div>
+
+    <!-- Fenêtre modale (hidden par défaut) -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="Agrandissement">
+</div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>

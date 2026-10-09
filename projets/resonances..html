@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <title>une_famille_marina_smorodinova</title>
+ <link rel="stylesheet" href="projects.css" />
+</head>
+<body class="projects-body">
+
+
+<!-- Conteneur global du header -->
+<div class="header-container">
+ <!-- Bouton de retour -->
+ <a href="projects_all.html" class="back-button" aria-label="Retour">
+   <img src="../icons/door2.svg" alt="Retour" class="icon-door">
+ </a>
+
+
+ <!-- Header principal -->
+ <header class="header">
+   <div class="left-block">
+     <a href="bio.html" class="logo">marina smorodinova</a>
+   </div>
+   <div class="right-block">
+     <a href="projects_all.html" class="menu-link">studio</a>
+   </div>
+ </header>
+</div>
+
+
+
+
+<main class="projects-page">
+ <div class="projects-left">
+   <div class="projects-text">
+     <p><strong>Resonances</strong></p>
+        <p>série des performances, 2026 - en cours</p>
+          <p>Chaque performance prend pour point de départ un bâtiment ayant eu une fonction collective forte, aujourd’hui disparue, transformée ou déplacée. À travers archives, témoignages et rencontres, le bâtiment devient une porte d’entrée vers un territoire et les histoires qui le traversent.
+La performance prend la forme d’une déambulation. Le corps de la performeuse devient un dispositif de réception et de traduction : il reçoit les traces, récits et transformations du lieu, puis les traduit par la parole, le son, la marche, le geste et parfois la danse.
+Les spectateur·ices sont à leur tour invités à traverser, écouter et percevoir le territoire. La performance ne restitue pas une histoire figée, mais met en circulation différentes temporalités, entre mémoire collective et récits individuels, présence et absence.
+Le bâtiment devient ainsi un réservoir de traces et la performance, un espace temporaire où celles-ci peuvent être réactivées, transformées et partagées collectivement.</p>
+ <p></p>
+  <p></p>
+       <p>Volet 1 : Résonance d’Überherrn, 2026</p>
+        <p>30 min, en deambulation en français, sous titres en allemand imprimé, enceinte</p>
+        <p>C’est une performance prenant la forme d’une visite guidée du territoire autour de l’ancien bâtiment d’Europe 1 à Überherrn. 
+          Elle s’inspire de la fonction particulière du bâtiment entre 1955 et 2019, de son implantation sur le territoire et de l’évolution de la radio Europe 1 elle-même. 
+          Réalisée en français et sous-titrée en allemand, elle comprend également une création sonore diffusée à l’aide d’une enceinte.
+</p>
+  </div>
+    </div>
+
+
+<!-- MÉDIAS À DROITE -->
+    <div class="project-media">
+    
+      <!-- 3 Images fixes -->
+      <div class="photo-row">
+        <img src="../images/resonance_d_uberhern.jpg" alt="Image du projet 1" data-src="../images/resonance_d_uberhern.jpg">
+        <img src="../images/resonance_d_uberhern_marina_smorodinova_1.png" alt="Image du projet 2" data-src="../images/resonance_d_uberhern_marina_smorodinova_1.png">
+        <img src="../images/resonance_d_uberhern_marina_smorodinova_2.png" alt="Image du projet 2" data-src="../images/resonance_d_uberhern_marina_smorodinova_2.png">
+
+      </div>
+
+    <!-- Fenêtre modale (hidden par défaut) -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="Agrandissement">
+</div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="script.js"></script>
+
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>
